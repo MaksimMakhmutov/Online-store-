@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Loader from '../../components/Loader/Loader';
 
 export const DetailPage = () => {
   const { id } = useParams(); // Получаем параметр id из URL
@@ -28,7 +29,7 @@ export const DetailPage = () => {
   }, [id]); // Зависимость от id
 
   if (loading) {
-    return <div>Загрузка...</div>; // Показать загрузчик
+    return <Loader />; // Показать загрузчик
   }
   if (error) {
     return <div>{error}</div>; // Показать ошибку

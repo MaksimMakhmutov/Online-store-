@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ProductCard } from '../../components'; // Импортируем компонент карточки товара
+import Loader from '../../components/Loader/Loader';
 
 export const ProductPage = () => {
   const [products, setProducts] = useState([]);
@@ -26,7 +27,7 @@ export const ProductPage = () => {
   }, []);
 
   if (loading) {
-    return <div>Загрузка...</div>;
+    return <Loader />;
   }
 
   if (error) {
